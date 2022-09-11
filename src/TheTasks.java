@@ -12,7 +12,10 @@ public class TheTasks {
 //		task4();
 //		task5();
 //		task6();
-		task7();
+//		task7();
+//		task8();
+//		task9();
+		task10();
 
 	}
 
@@ -179,7 +182,7 @@ public class TheTasks {
 	public static void task7() {
 //		a bubble sorting
 
-		int size7 = 10;
+		int size7 = 15;
 		int[] ints7 = new int[size7];
 		for (int i = 0; i < ints7.length; i++)
 			ints7[i] = new Random().nextInt(40);
@@ -204,9 +207,61 @@ public class TheTasks {
 //				System.out.println(lastIndex + " " + maxValue);  
 				maxValue = 0;
 			}
-			if (lastIndex==0)
+			if (lastIndex == 0)
 				break;
 		}
+	}
+
+	public static void task8() {
+		int size8 = 20;
+		boolean bool8 = false;
+		int[] ints8 = new int[size8];
+		for (int i = 0; i < ints8.length; i++)
+			ints8[i] = new Random().nextInt(10);
+		System.out.println(Arrays.toString(ints8));
+		for (int i = 0, l = 1, k = 2; k < ints8.length; i++, l++, k++) {
+			if (ints8[i] == ints8[l] && ints8[i] == ints8[k])
+				bool8 = true;
+		}
+		System.out.println(bool8);
+	}
+
+	public static void task9() {
+		int size9 = 20;
+		boolean bool9 = false;
+		int a9 = 4, b9 = 6;
+		int[] ints9 = new int[size9];
+		for (int i = 0; i < ints9.length; i++)
+			ints9[i] = new Random().nextInt(20);
+		System.out.println(Arrays.toString(ints9));
+		for (int i = 0; i < ints9.length; i++) {
+			if (ints9[i] % a9 == 0 && ints9[i] % b9 != 0) {
+				bool9 = true;
+				System.out.println(ints9[i]);
+			}
+		}
+		System.out.println(bool9);
+	}
+
+	public static void task10() {
+		int size10 = 20;
+		int[] ints10 = new int[size10];
+		for (int i = 0; i < ints10.length; i++)
+			ints10[i] = new Random().nextInt(20);
+		System.out.println(Arrays.toString(ints10));
+		Arrays.sort(ints10);
+		System.out.println(Arrays.toString(ints10));
+		int value10 = 0;
+		int quantity10 = 0;
+		for (int i = ints10.length - 1; i >= 0; i--) {
+			if (ints10[i] % 2 == 0) {
+				value10 = ints10[i];
+				quantity10++;
+				if (ints10[i] != ints10[i - 1])
+					break;
+			}
+		}
+		System.out.println(quantity10 + " " + value10);
 	}
 
 }
