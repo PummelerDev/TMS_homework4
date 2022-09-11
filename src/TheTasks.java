@@ -191,7 +191,7 @@ public class TheTasks {
 		int maxValue = 0;
 		int lastIndex = ints7.length - 1;
 		while (true) {
-			for (int i = 0, x = 1; x < ints7.length; i++, x++) {
+			for (int i = 0, x = 1; x <= lastIndex; i++, x++) {
 				if (ints7[i] > ints7[x]) {
 					if (ints7[i] > maxValue)
 						maxValue = ints7[i];
@@ -204,7 +204,7 @@ public class TheTasks {
 			if (maxValue <= ints7[lastIndex]) {
 				lastIndex--;
 //	just my system for analysis			
-//				System.out.println(lastIndex + " " + maxValue);  
+//				System.out.println(lastIndex + " " + maxValue);
 				maxValue = 0;
 			}
 			if (lastIndex == 0)
