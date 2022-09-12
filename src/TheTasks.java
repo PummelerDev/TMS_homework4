@@ -15,7 +15,9 @@ public class TheTasks {
 //		task7();
 //		task8();
 //		task9();
-		task10();
+//		task10();
+//		task11();
+		task12();
 
 	}
 
@@ -264,4 +266,56 @@ public class TheTasks {
 		System.out.println(quantity10 + " " + value10);
 	}
 
+	public static void task11() {
+		int size11 = 20;
+		int[] ints11 = new int[size11];
+		for (int i = 0; i < ints11.length; i++)
+			ints11[i] = new Random().nextInt(20);
+		System.out.println(Arrays.toString(ints11));
+		int maxValue11 = ints11[0];
+		int index = 0;
+		for (int i = 0; i < ints11.length; i++) {
+			if (ints11[i] > maxValue11) {
+				maxValue11 = ints11[i];
+				index = i;
+			}
+		}
+		System.out.println(maxValue11 + " maxValue");
+		System.out.println(index + " index");
+		int[] ints11_new = new int[ints11.length + 1];
+		for (int i = 0; i <= index; i++)
+			ints11_new[i] = ints11[i];
+		ints11_new[index + 1] = index;
+		for (int i = index + 1; i < ints11.length; i++)
+			ints11_new[i + 1] = ints11[i];
+		System.out.println(Arrays.toString(ints11_new));
+	}
+
+	public static void task12() {
+		int size12 = 20;
+		int[] ints12 = new int[size12];
+		for (int i = 0; i < ints12.length; i++)
+			ints12[i] = new Random().nextInt(20);
+		System.out.println(Arrays.toString(ints12));
+		int[] ints12_new = new int[ints12.length];
+		for (int i = 0; i < ints12.length; i++) {
+			for (int j = 0; j < ints12.length; j++) {
+				if (ints12[i] == ints12[j])
+					ints12_new[i]++;
+			}
+		}
+		System.out.println(Arrays.toString(ints12_new));
+		int maxNumberOfCoincidence = ints12_new[0];
+		for (int i = 0; i < ints12_new.length; i++) {
+			if (maxNumberOfCoincidence < ints12_new[i])
+				maxNumberOfCoincidence = ints12_new[i];
+		}
+		System.out.println(maxNumberOfCoincidence);
+		for (int i = 0; i < ints12_new.length; i++) {
+			if (ints12_new[i] == maxNumberOfCoincidence) {
+				System.out.println("there are " + maxNumberOfCoincidence + " numbers " + ints12[i]);
+
+			}
+		}
+	}
 }
